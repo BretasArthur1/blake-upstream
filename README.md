@@ -1,6 +1,6 @@
 # Solana Upstream BPF 
 
-Repo for testing misalignment + latest nightly with a common pattern in solana programs (Blake Hash)
+Repo for testing misalignment + latest nightly channel features with the upstream BPF toolchain.
 
 ## Prerequisites
 
