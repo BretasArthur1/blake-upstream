@@ -11,6 +11,7 @@ rustflags = [
 "-C", "link-arg=--llvm-args=--bpf-stack-size=4096",
 "-C", "link-arg=--dump-module=llvm_dump",
 "-C", "link-arg=--disable-expand-memcpy-in-order",
+"-C", "target-cpu=v2"
 ]
 [alias]
 build-bpf = "build --release --target bpfel-unknown-none"
