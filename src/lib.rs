@@ -1,9 +1,36 @@
-#![cfg_attr(target_arch = "bpf", no_std, no_builtins)]
+#![cfg_attr(target_arch = "bpf", no_std)]
 
 #[cfg(target_arch = "bpf")]
 #[panic_handler]
 fn panic(_: &core::panic::PanicInfo) -> ! {
     unsafe { core::hint::unreachable_unchecked() }
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn memcmp(a: *const u8, b: *const u8, n: usize) -> i32 {
+    let mut i = 0usize;
+    
+    while i + 8 <= n  {
+        let wa = core::ptr::read_unaligned(a.add(i) as *const u64);
+        let wb = core::ptr::read_unaligned(b.add(i) as *const u64);
+        
+        if wa != wb {
+            return 1;
+        }
+        
+        i += 8
+    }
+    
+    while i < n {
+        
+        if *a.add(i) != *b.add(i) {
+            return 1;
+        }
+        
+        i += 1
+    }
+    
+    0
 }
 
 pub struct Blake3Hash([u8; 32]);
