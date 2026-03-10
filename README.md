@@ -44,7 +44,7 @@ You should see
 ```
 running 1 test
 [2026-02-17T14:48:29.241647000Z DEBUG solana_runtime::message_processor::stable_log] Program 8qbHbw2BbbTHBW1sbeqakYXVKRQM8Ne7pLK7m6CVfeR invoke [1]
-[2026-02-17T14:48:29.242479000Z DEBUG solana_runtime::message_processor::stable_log] Program 8qbHbw2BbbTHBW1sbeqakYXVKRQM8Ne7pLK7m6CVfeR consumed 302 of 1400000 compute units
+[2026-02-17T14:48:29.242479000Z DEBUG solana_runtime::message_processor::stable_log] Program 8qbHbw2BbbTHBW1sbeqakYXVKRQM8Ne7pLK7m6CVfeR consumed 12 of 1400000 compute units
 [2026-02-17T14:48:29.242530000Z DEBUG solana_runtime::message_processor::stable_log] Program 8qbHbw2BbbTHBW1sbeqakYXVKRQM8Ne7pLK7m6CVfeR success
 test tests::hello_world ... ok
 
